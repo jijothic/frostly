@@ -1,2 +1,0 @@
-# frostly
-Created with CodeSandbox
