@@ -1,16 +1,13 @@
+import "./hacks";
+import "normalize.css/normalize.css";
+import "./styles.css";
 import React from "react";
 import ReactDOM from "react-dom";
+import MainApp from "./app";
 
-import "./styles.css";
+const rootEl = document.getElementById("⚛");
+const root = ReactDOM.createRoot(rootEl);
+root.render(<MainApp />);
 
-function App() {
-  return (
-    <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
-    </div>
-  );
-}
-
-const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
+// to enable sync mode, comment out the above stuff and comment this in.
+// ReactDOM.render(<MainApp />, rootEl)
