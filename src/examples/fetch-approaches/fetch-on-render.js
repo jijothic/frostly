@@ -2,20 +2,20 @@
 
 // http://localhost:3000/isolated/examples/fetch-approaches/fetch-on-render
 
-import React from "react";
-import { PokemonForm } from "../../utils";
+import React from 'react'
+import {PokemonForm} from '../../utils'
 
 const PokemonInfo = React.lazy(() =>
-  import("./lazy/pokemon-info-fetch-on-render")
-);
+  import('./lazy/pokemon-info-fetch-on-render'),
+)
 
-window.fetch.restoreOriginalFetch();
+window.fetch.restoreOriginalFetch()
 
 function App() {
-  const [pokemonName, setPokemonName] = React.useState(null);
+  const [pokemonName, setPokemonName] = React.useState(null)
 
   function handleSubmit(newPokemonName) {
-    setPokemonName(newPokemonName);
+    setPokemonName(newPokemonName)
   }
 
   return (
@@ -26,11 +26,11 @@ function App() {
         {pokemonName ? (
           <PokemonInfo pokemonName={pokemonName} />
         ) : (
-          "Submit a pokemon"
+          'Submit a pokemon'
         )}
       </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

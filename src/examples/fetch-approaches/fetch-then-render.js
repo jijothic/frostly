@@ -2,49 +2,49 @@
 
 // http://localhost:3000/isolated/examples/fetch-approaches/fetch-then-render
 
-import React from "react";
-import fetchPokemon from "../../fetch-pokemon";
-import { PokemonForm, PokemonInfoFallback } from "../../utils";
+import React from 'react'
+import fetchPokemon from '../../fetch-pokemon'
+import {PokemonForm, PokemonInfoFallback} from '../../utils'
 
 const PokemonInfo = React.lazy(() =>
-  import("./lazy/pokemon-info-fetch-then-render")
-);
+  import('./lazy/pokemon-info-fetch-then-render'),
+)
 
-window.fetch.restoreOriginalFetch();
+window.fetch.restoreOriginalFetch()
 
 function usePokemon(pokemonName) {
-  const [state, setState] = React.useReducer((s, a) => ({ ...s, ...a }), {
+  const [state, setState] = React.useReducer((s, a) => ({...s, ...a}), {
     pokemon: null,
     error: null,
-    status: "pending"
-  });
+    status: 'pending',
+  })
 
   React.useEffect(() => {
     if (!pokemonName) {
-      return;
+      return
     }
-    let current = true;
-    setState({ status: "pending" });
+    let current = true
+    setState({status: 'pending'})
     fetchPokemon(pokemonName).then(
       p => {
-        if (current) setState({ pokemon: p, status: "success" });
+        if (current) setState({pokemon: p, status: 'success'})
       },
       e => {
-        if (current) setState({ error: e, status: "error" });
-      }
-    );
-    return () => (current = false);
-  }, [pokemonName]);
+        if (current) setState({error: e, status: 'error'})
+      },
+    )
+    return () => (current = false)
+  }, [pokemonName])
 
-  return state;
+  return state
 }
 
 function App() {
-  const [pokemonName, setPokemonName] = React.useState(null);
-  const { pokemon, error, status } = usePokemon(pokemonName);
+  const [pokemonName, setPokemonName] = React.useState(null)
+  const {pokemon, error, status} = usePokemon(pokemonName)
 
   function handleSubmit(newPokemonName) {
-    setPokemonName(newPokemonName);
+    setPokemonName(newPokemonName)
   }
 
   return (
@@ -53,22 +53,22 @@ function App() {
       <hr />
       <div className="pokemon-info">
         {pokemonName ? (
-          status === "pending" ? (
+          status === 'pending' ? (
             <PokemonInfoFallback name={pokemonName} />
-          ) : status === "error" ? (
+          ) : status === 'error' ? (
             <div>
               There was an error.
-              <pre style={{ whiteSpace: "normal" }}>{error.message}</pre>
+              <pre style={{whiteSpace: 'normal'}}>{error.message}</pre>
             </div>
-          ) : status === "success" ? (
+          ) : status === 'success' ? (
             <PokemonInfo pokemon={pokemon} />
           ) : null
         ) : (
-          "Submit a pokemon"
+          'Submit a pokemon'
         )}
       </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

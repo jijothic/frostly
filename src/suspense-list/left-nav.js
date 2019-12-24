@@ -1,5 +1,5 @@
-import React from "react";
-import * as cn from "./left-nav.module.css";
+import React from 'react'
+import * as cn from './left-nav.module.css'
 
 function LeftNav() {
   return (
@@ -27,10 +27,10 @@ function LeftNav() {
         </li>
       </ul>
     </div>
-  );
+  )
 }
 
-export default LeftNav;
+export default LeftNav
 
 /*
 eslint

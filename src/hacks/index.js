@@ -1,2 +1,2 @@
-import "stop-runaway-react-effects/hijack";
-import "./fetch";
+import 'stop-runaway-react-effects/hijack'
+import './fetch'

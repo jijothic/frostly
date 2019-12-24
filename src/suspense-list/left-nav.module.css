@@ -15,7 +15,7 @@
 }
 
 .list li:before {
-  content: "";
+  content: '';
   display: inline-block;
   height: 0.8rem;
   width: 0.8rem;

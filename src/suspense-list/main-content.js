@@ -43,6 +43,7 @@ function MainContent({pokemonResource}) {
     </div>
   )
 }
+
 function Transaction({id, recipient, amount, message}) {
   return (
     <div className={cn.transaction}>
@@ -61,4 +62,5 @@ function Transaction({id, recipient, amount, message}) {
     </div>
   )
 }
+
 export default MainContent

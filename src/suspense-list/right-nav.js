@@ -1,9 +1,9 @@
-import React from "react";
-import Img from "./img";
-import * as cn from "./right-nav.module.css";
+import React from 'react'
+import Img from './img'
+import * as cn from './right-nav.module.css'
 
-function RightNav({ pokemonResource }) {
-  const pokemon = pokemonResource.read();
+function RightNav({pokemonResource}) {
+  const pokemon = pokemonResource.read()
   return (
     <div className={cn.root}>
       <div>
@@ -24,10 +24,10 @@ function RightNav({ pokemonResource }) {
         </ul>
       </div>
     </div>
-  );
+  )
 }
 
-function Friend({ name }) {
+function Friend({name}) {
   return (
     <a href="#" className={cn.friendLink}>
       <div className={cn.friendPhotoContainer}>
@@ -39,10 +39,10 @@ function Friend({ name }) {
       </div>
       <span className={cn.friendName}>{name}</span>
     </a>
-  );
+  )
 }
 
-export default RightNav;
+export default RightNav
 
 /*
 eslint

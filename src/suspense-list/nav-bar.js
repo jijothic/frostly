@@ -1,6 +1,6 @@
-import React from "react";
-import Img from "./img";
-import * as cn from "./nav-bar.module.css";
+import React from 'react'
+import Img from './img'
+import * as cn from './nav-bar.module.css'
 import {
   IoIosHome,
   IoIosNotifications,
@@ -8,11 +8,11 @@ import {
   IoIosList,
   IoIosSync,
   IoIosCopy,
-  IoIosCog
-} from "react-icons/io";
+  IoIosCog,
+} from 'react-icons/io'
 
-function NavBar({ pokemonResource }) {
-  const pokemon = pokemonResource.read();
+function NavBar({pokemonResource}) {
+  const pokemon = pokemonResource.read()
   return (
     <div className={cn.root}>
       <div className={cn.logoAndSearch}>
@@ -23,26 +23,26 @@ function NavBar({ pokemonResource }) {
       </div>
       <div className={cn.centerButtons}>
         <button
-          style={{ color: pokemon.color }}
-          onClick={() => alert("You clicked the Home button")}
+          style={{color: pokemon.color}}
+          onClick={() => alert('You clicked the Home button')}
         >
           <IoIosHome />
         </button>
         <button
-          style={{ color: pokemon.color }}
-          onClick={() => alert("You clicked the Notifications button")}
+          style={{color: pokemon.color}}
+          onClick={() => alert('You clicked the Notifications button')}
         >
           <IoIosNotifications />
         </button>
         <button
-          style={{ color: pokemon.color }}
-          onClick={() => alert("You clicked the Filing button")}
+          style={{color: pokemon.color}}
+          onClick={() => alert('You clicked the Filing button')}
         >
           <IoIosFiling />
         </button>
         <button
-          style={{ color: pokemon.color }}
-          onClick={() => alert("You clicked your profile image")}
+          style={{color: pokemon.color}}
+          onClick={() => alert('You clicked your profile image')}
         >
           <Img
             className={cn.profilePhoto}
@@ -51,34 +51,34 @@ function NavBar({ pokemonResource }) {
           />
         </button>
         <button
-          style={{ color: pokemon.color }}
-          onClick={() => alert("You clicked the List button")}
+          style={{color: pokemon.color}}
+          onClick={() => alert('You clicked the List button')}
         >
           <IoIosList />
         </button>
         <button
-          style={{ color: pokemon.color }}
-          onClick={() => alert("You clicked the Sync button")}
+          style={{color: pokemon.color}}
+          onClick={() => alert('You clicked the Sync button')}
         >
           <IoIosSync />
         </button>
         <button
-          style={{ color: pokemon.color }}
-          onClick={() => alert("You clicked the Copy button")}
+          style={{color: pokemon.color}}
+          onClick={() => alert('You clicked the Copy button')}
         >
           <IoIosCopy />
         </button>
       </div>
       <div>
         <button
-          style={{ color: pokemon.color }}
-          onClick={() => alert("You clicked the Cog button")}
+          style={{color: pokemon.color}}
+          onClick={() => alert('You clicked the Cog button')}
         >
           <IoIosCog />
         </button>
       </div>
     </div>
-  );
+  )
 }
 
-export default NavBar;
+export default NavBar
